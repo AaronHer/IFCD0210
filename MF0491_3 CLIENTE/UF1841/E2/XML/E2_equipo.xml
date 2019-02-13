@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<equipo_de_futbol xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///C:/Users/pc/Desktop/E2/Esquema/Esquema_Equipo.xsd">
+	<equipo>
+		<nombre>F.C.Barcelona</nombre>
+		<p> El Fútbol Club Barcelona (en catalán, Futbol Club Barcelona) es una entidad polideportiva de Barcelona (España). Fue fundado como club de fútbol el 29 de noviembre de 1899</p>
+		<entrenador/>
+		<nombre_entrenador> Ernesto Valverde Tejedor </nombre_entrenador>
+		<jugadores>
+			<!-- Este es el equipo Titular-->
+			<jugador posicion="Portero">
+				<nombre>Marc-André ter Stegen</nombre>
+				<nacionalidad>Alemana</nacionalidad>
+				<img alt="Portero" src="C:\Users\pc\Desktop\E2\Imagenes\01_TER-STEGEN-JOC"/>
+			</jugador>
+			<jugador posicion="Defensa">
+				<nombre>Jordi Alba</nombre>
+				<nacionalidad>Española</nacionalidad>
+				<img alt="Lateral_Izq" src="C:\Users\pc\Desktop\E2\Imagenes\18-JORDI-ALBA-JOC"/>
+				<nombre>Gerard Piqué</nombre>
+				<nacionalidad>Española</nacionalidad>
+				<img alt="Central" src="C:\Users\pc\Desktop\E2\Imagenes\03-PIQUE-JOC"/>
+				<nombre>Samuel Umtiti</nombre>
+				<nacionalidad>Frances</nacionalidad>
+				<img alt="Central" src="C:\Users\pc\Desktop\E2\Imagenes\23-UMTITI-JOC"/>
+				<nombre>Nélson Cabral Semedo</nombre>
+				<nacionalidad>Portugues</nacionalidad>
+				<img alt="Lateral_Dch" src="C:\Users\pc\Desktop\E2\Imagenes\02-SEMEDO-JOC"/>
+			</jugador>
+			<jugador posicion="Centrocampista">
+				<nombre>Ivan Rakitic</nombre>
+				<nacionalidad>Croata</nacionalidad>
+				<img alt="Mediocentro" src="C:\Users\pc\Desktop\E2\Imagenes\04-RAKITIC-JOC"/>
+				<nombre>Sergio Busquets</nombre>
+				<nacionalidad>Española</nacionalidad>
+				<img alt="Mediocentro" src="C:\Users\pc\Desktop\E2\Imagenes\05-SERGIO-JOC"/>
+				<nombre>Philippe Coutinho</nombre>
+				<nacionalidad>Brasileño</nacionalidad>
+				<img alt="Mediocentro" src="C:\Users\pc\Desktop\E2\Imagenes\07-COUTINHO-JOC"/>
+			</jugador>
+			<jugador posicion="Delantero">
+				<nombre>Lionel Messi</nombre>
+				<nacionalidad>Argentíno</nacionalidad>
+				<img alt="Extremo derecho" src="C:\Users\pc\Desktop\E2\Imagenes\10-MESSI-JOC"/>
+				<nombre>Luis Suarez</nombre>
+				<nacionalidad>Uruguallo</nacionalidad>
+				<img alt="Delantero Centro" src="C:\Users\pc\Desktop\E2\Imagenes\09-SUAREZ-JOC"/>
+				<nombre>Ousmane Dembélé</nombre>
+				<nacionalidad>Frances</nacionalidad>
+				<img alt="Extremo Izquierdo" src="C:\Users\pc\Desktop\E2\Imagenes\07-COUTINHO-JOC"/>
+			</jugador>
+		</jugadores>
+	</equipo>
+</equipo_de_futbol>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- W3C Schema generado con XMLSpy v2019 sp1 (http://www.altova.com) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="entrenador">
+		<xs:complexType>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="equipo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="nombre"/>
+				<xs:element ref="p"/>
+				<xs:element ref="entrenador"/>
+				<xs:element ref="nombre_entrenador"/>
+				<xs:element ref="jugadores"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="equipo_de_futbol">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="equipo"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="img">
+		<xs:complexType>
+			<xs:attribute name="alt" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Central"/>
+						<xs:enumeration value="Delantero Centro"/>
+						<xs:enumeration value="Extremo Izquierdo"/>
+						<xs:enumeration value="Extremo derecho"/>
+						<xs:enumeration value="Lateral_Dch"/>
+						<xs:enumeration value="Lateral_Izq"/>
+						<xs:enumeration value="Mediocentro"/>
+						<xs:enumeration value="Portero"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="src" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:anyURI">
+						<xs:enumeration value="C:\Users\pc\Desktop\E2\Imagenes\01_TER-STEGEN-JOC"/>
+						<xs:enumeration value="C:\Users\pc\Desktop\E2\Imagenes\02-SEMEDO-JOC"/>
+						<xs:enumeration value="C:\Users\pc\Desktop\E2\Imagenes\03-PIQUE-JOC"/>
+						<xs:enumeration value="C:\Users\pc\Desktop\E2\Imagenes\04-RAKITIC-JOC"/>
+						<xs:enumeration value="C:\Users\pc\Desktop\E2\Imagenes\05-SERGIO-JOC"/>
+						<xs:enumeration value="C:\Users\pc\Desktop\E2\Imagenes\07-COUTINHO-JOC"/>
+						<xs:enumeration value="C:\Users\pc\Desktop\E2\Imagenes\09-SUAREZ-JOC"/>
+						<xs:enumeration value="C:\Users\pc\Desktop\E2\Imagenes\10-MESSI-JOC"/>
+						<xs:enumeration value="C:\Users\pc\Desktop\E2\Imagenes\18-JORDI-ALBA-JOC"/>
+						<xs:enumeration value="C:\Users\pc\Desktop\E2\Imagenes\23-UMTITI-JOC"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="jugador">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="nombre"/>
+				<xs:element ref="nacionalidad"/>
+				<xs:element ref="img"/>
+				<xs:sequence minOccurs="0">
+					<xs:element ref="nombre"/>
+					<xs:element ref="nacionalidad"/>
+					<xs:element ref="img"/>
+					<xs:element ref="nombre"/>
+					<xs:element ref="nacionalidad"/>
+					<xs:element ref="img"/>
+					<xs:sequence minOccurs="0">
+						<xs:element ref="nombre"/>
+						<xs:element ref="nacionalidad"/>
+						<xs:element ref="img"/>
+					</xs:sequence>
+				</xs:sequence>
+			</xs:sequence>
+			<xs:attribute name="posicion" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Centrocampista"/>
+						<xs:enumeration value="Defensa"/>
+						<xs:enumeration value="Delantero"/>
+						<xs:enumeration value="Portero"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="jugadores">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="jugador" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="nacionalidad">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="Alemana"/>
+				<xs:enumeration value="Argentíno"/>
+				<xs:enumeration value="Brasileño"/>
+				<xs:enumeration value="Croata"/>
+				<xs:enumeration value="Española"/>
+				<xs:enumeration value="Frances"/>
+				<xs:enumeration value="Portugues"/>
+				<xs:enumeration value="Uruguallo"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="nombre">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="F.C.Barcelona"/>
+				<xs:enumeration value="Gerard Piqué"/>
+				<xs:enumeration value="Ivan Rakitic"/>
+				<xs:enumeration value="Jordi Alba"/>
+				<xs:enumeration value="Lionel Messi"/>
+				<xs:enumeration value="Luis Suarez"/>
+				<xs:enumeration value="Marc-André ter Stegen"/>
+				<xs:enumeration value="Nélson Cabral Semedo"/>
+				<xs:enumeration value="Ousmane Dembélé"/>
+				<xs:enumeration value="Philippe Coutinho"/>
+				<xs:enumeration value="Samuel Umtiti"/>
+				<xs:enumeration value="Sergio Busquets"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="nombre_entrenador">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value=" Ernesto Valverde Tejedor "/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="p" type="xs:string"/>
+</xs:schema>

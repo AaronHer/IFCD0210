@@ -1,0 +1,269 @@
+/*Aspectos generales de la página*/
+
+/* CONTENEDOR es una estructura dentro de Body */
+.contenedor{
+	/*background: #6D6D6D;*/
+	width: 100%;
+	/*max-width: 1000px;*/
+	margin: auto;
+
+	/* flex */
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap:wrap ;
+}
+header{
+	background: url(../Imagenes/imagenFondo.jpg);
+	width: 100%;
+	padding: 30px;
+
+	/* Flex */
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	/* Con esta linea, conseguimps que los elementos si se cambia de dispositivo
+	o se hace mas pequeña la pantantalla, se cambien el menú y el texto de posición */ 
+	flex-flow: row wrap;
+
+	
+}
+header .logo h1 img{
+	width: 80px;
+	vertical-align: top;
+}
+h1{
+	color: #93C9FF;
+	font-size: 60px;
+	font-style: italic;
+	/* Alineo con el mismo tamño el texto y el logo */
+	line-height: 70px
+	
+}
+
+img {
+	width: 200px;
+}
+
+/* MENU: son los enlaces en el header */
+.menu{
+	width: 40%;
+	border: 3px solid #0155AA;
+	background:url(../Imagenes/metal.jpg);
+
+	/* Flex */
+
+	display: flex;
+	flex-grow: wrap;
+	align-items: center;
+}
+
+.menu a{
+	padding: 10px 18px;
+	text-decoration: none;
+	text-align: center;
+	color: black;
+
+
+	/* Flex */
+	 /* Con grow  van a ocupar el tamaño que necesiten todos por igual */ 
+	
+	flex-grow: 1;
+}
+header div a:hover {
+	background: #CC77FF;
+}
+
+.main{
+	background: #fff;
+	padding: 20px;
+	/*flex:1 1 70%;*/
+
+/*El primer valor nos indica cuanto va a crecer el primer elemento
+El segundo  en cuando se encoge con respecto a los demas y el tercero 
+el porcentaje que ocupa*/ 
+	
+
+}
+.main article{
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid black;
+}
+/* Para que el ultimo elemento que pongamos dentro de las secciones, no tenga el efecto de linea separadora
+usamos el siguiente elemento para qe no se mescle con otra parte del texto */ 
+.main article:nth-last-child(1){
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	border-bottom: none;
+
+}
+
+h2{
+	color: #094B8D;
+	font-size: 40px;
+	font-style: italic;
+	margin: 30px;
+	text-shadow: 0.03em 0.03em #000000;
+
+}
+p{
+	margin-left: 10px;
+	font-family: cursive;
+	font-weight:bold;
+	color: #13028F;
+	
+}
+
+/* este cuerpo va desd el H2 hasta el final de las tablas, para intentar controlar las frexbox y que siempre estén todos un debajo del otro. Pero no lo consigo
+No se si es que tengo que aplicarle a cada uno un porcentaje de la página o simplmente qu es absurdo usar estas tablas con flexbox */
+.cuerpo{
+	display: flex;
+	flex-direction: column;
+
+}
+
+.portero,.defensa, .centro, .delantero{
+	/*width: 30%;
+	height: 30%;*/
+	padding: 10px;
+	margin: 10px;
+	background: #93C9FF;
+	text-align: center;
+	vertical-align: center;
+	flex:1 1 30%;
+	/*flex-grow: 1;*/
+
+
+	border:inherit 5px #000000;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow:inset 9px 10px 39px #000000;
+	-webkit-box-shadow:inset 9px 10px 39px #000000;
+	box-shadow:inset 9px 10px 39px #000000;
+
+}
+.portero td{
+	padding: 10px;
+}
+.defensa td{
+	padding: 10px;
+}
+.centro td{
+	padding: 10px;
+}
+.delantero td{
+	padding: 10px;
+}
+
+.bandera{
+	width: 50px;
+	height: 40px;
+}
+a:link{
+	
+	text-decoration: none;
+	font-size: 20px;
+}
+
+a:visited{
+	color:#E80D0D;
+}
+.formulario{
+	display: flex;
+	flex-direction: column;
+}
+
+.fb{
+	width: 40px;
+	height: 40px;
+}
+.insta, .twitter{
+	width: 30px;
+	height: 30px;
+}
+footer{
+	width: 100%;
+	padding: 30px;
+	background: url(../Imagenes/imagenFondo.jpg);
+	/*background: #474747;*/
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+
+}
+.form {
+	font-family: cursive;
+	font-weight:bold;
+	color: #13028F;
+
+	font-size: 15px;
+	font-style: italic;
+	margin: 10px;
+}
+input:focus, textarea:focus{
+	background: #93C9FF;
+	height: 20px;
+	color:black;
+	font-style: italic;
+}
+
+
+/* Cosas que he ido desechando */
+/*aside{
+	background: #B9E7FF;
+	flex:1 1 30%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	flex-direction: column;
+
+}*/
+
+/*main{
+	/*height: 100vh;
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(1, 1fr);
+
+}*/
+
+/* Mirar para cambiarlo a FlexBox */
+/*main div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #B7DBFF;
+	color: black;
+	font-size: 30px;
+	font-family: cursive;
+	font-weight:bold;
+	-moz-box-shadow: 9px 6px 27px #000000;
+	-webkit-box-shadow: 9px 6px 27px #000000;
+	box-shadow: 9px 6px 27px #B4B4B4;
+	border-radius: 19px 19px;
+}*/
+/*#portero{
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+}
+#a:nth-child(5){
+	background-color: green;
+	grid-column: 2/3;
+	grid-row: 2/4;
+}*/
+
+
+
+
+
+
+
+
+

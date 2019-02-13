@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- DTD generado con XMLSpy v2019 sp1 (http://www.altova.com) -->
+<!ELEMENT p (#PCDATA)>
+<!ELEMENT img EMPTY>
+<!ATTLIST img
+	alt CDATA #REQUIRED
+	src CDATA #REQUIRED
+>
+<!ELEMENT equipo (nombre, p, entrenador, nombre_entrenador, jugadores)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT jugador (nombre, nacionalidad, img, (nombre, nacionalidad, img, nombre, nacionalidad, img, (nombre, nacionalidad, img)?)?)>
+<!ATTLIST jugador
+	posicion (Centrocampista | Defensa | Delantero | Portero) #REQUIRED
+>
+<!ELEMENT jugadores (jugador+)>
+<!ELEMENT entrenador EMPTY>
+<!ELEMENT nacionalidad (#PCDATA)>
+<!ELEMENT equipo_de_futbol (equipo)>
+<!ATTLIST equipo_de_futbol
+	xsi:noNamespaceSchemaLocation CDATA #FIXED "file:///C:/Users/pc/Desktop/E2/Esquema_.xsd"
+	xmlns:xsi CDATA #FIXED "http://www.w3.org/2001/XMLSchema-instance"
+>
+<!ELEMENT nombre_entrenador (#PCDATA)>
