@@ -48,15 +48,50 @@ header .logo a {
 	text-decoration: none;
 	line-height:50px;
 }
+header .hora{
+	color:#FFFFFF;
+}
  
-header nav {
+.hora p{
+	display: inline-block;
+	line-height: 1em;
+
+}
+.fecha{
+	font-family: Oswald, Arial;
+	text-align: center;
+	font-size: 1.5em;
+	margin-bottom: 5px;
+	background: rgba(0,0,0,0.5); /* Tranparencia de 0.5 */
+	padding: 20px;
+	width: 100%;
+}
+.reloj{
+	font-family: Oswald, Arial;
+	text-align: center;
+	font-size: 4em;
+	margin-bottom: 5px;
+	background: rgba(0,0,0,.5); /* Tranparencia de 0.5 */
+	padding: 20px;
+	width: 100%;
+}
+.reloj .caja-segundos{
+	display: inline-block;
+}
+.reloj .segundos, .reloj .ampm{
+	font-size: 2rem;
+	display: block;
+}
+
+
+/*header nav {
 	width:50%;
 	/* Flexbox */
  
-	display:flex;
+	/*display:flex;
 	flex-wrap:wrap;
 	align-items:center;
-}
+}*/
  
 header nav a {
 	background:#5465B0;
