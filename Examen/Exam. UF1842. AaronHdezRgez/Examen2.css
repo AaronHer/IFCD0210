@@ -57,6 +57,12 @@ article p {
 article h2, article p, article hr {
 	margin-bottom: 20px;
 }
+
+#img, #tresD {
+	width:220px ;
+	height:200px;
+}
+
 .calculadora {
 	display: inline-block;
 	background-color: #ffffff;
@@ -111,3 +117,45 @@ article h2, article p, article hr {
 	color: #222222;
 }
 
+header .hora{
+	color:#FFFFFF;
+}
+ 
+.hora p{
+	display: inline-block;
+	line-height: 1em;
+
+}
+.fecha{
+	font-family: Oswald, Arial;
+	text-align: center;
+	font-size: 1.5em;
+	margin-bottom: 5px;
+	background: rgba(0,0,0,0.5); /* Tranparencia de 0.5 */
+	padding: 20px;
+	width: 100%;
+}
+.reloj{
+	font-family: Oswald, Arial;
+	text-align: center;
+	font-size: 4em;
+	margin-bottom: 5px;
+	background: rgba(0,0,0,.5); /* Tranparencia de 0.5 */
+	padding: 20px;
+	width: 100%;
+}
+.reloj .caja-segundos{
+	display: inline-block;
+}
+.reloj .segundos, .reloj .ampm{
+	font-size: 2rem;
+	display: block;
+}
+
+a{
+	color: #5ABAD6;
+}
+
+a:visited{
+	color:#E80D0D;
+}
