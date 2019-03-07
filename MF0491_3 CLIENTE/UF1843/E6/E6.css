@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+
+* {
+	padding:0;
+	margin:0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+ 
+body {
+	background:url(./imagenes/D3A.jpg); /* Nuestra imagen de fondo */
+	background-repeat:repeat; /* Indicamos que no se repetira */
+	background-size:cover; /* Encajamos la imagen al 100% del ancho */
+	background-attachment: fixed; /* Establecemos una posicion fija para la imagen */
+ 
+	font-family:helvetica, arial, sans-serif;
+	line-height:20px;
+}
+
+header {
+	/*background:#30336D;*/
+	width:100%;
+	padding:20px;
+ 
+	/* Flexbox */
+	display: flex;
+	justify-content:space-between;
+	align-items:center;
+ 
+	flex-direction:row;
+	flex-wrap:wrap;
+}
+ 
+header .logo {
+	color:#fff;
+	font-size:30px;
+}
+ 
+header .logo img {
+	width:100px;
+	vertical-align:center;
+}
+h1{
+	text-shadow:5px 5px 5px #000000;
+}
+
+header .hora{
+	color:#FFFFFF;
+}
+.hora p{
+	display: inline-block;
+	line-height: 1em;
+
+}
+.fecha{
+	font-family: Oswald, Arial;
+	text-align: center;
+	font-size: 1.5em;
+	margin-bottom: 5px;
+	background: rgba(0,0,0,0.5); /* Tranparencia de 0.5 */
+	padding: 20px;
+	width: 100%;
+}
+.reloj{
+	font-family: Oswald, Arial;
+	text-align: center;
+	font-size: 4em;
+	margin-bottom: 5px;
+	background: rgba(0,0,0,.5); /* Tranparencia de 0.5 */
+	padding: 20px;
+	width: 100%;
+}
+.reloj .caja-segundos{
+	display: inline-block;
+}
+.reloj .segundos, .reloj .ampm{
+	font-size: 2rem;
+	display: block;
+}
+
+li.lista-acc {
+	display: inline-block;
+	margin: 5px 25px;
+	padding: 7.5px 15px;
+	font: normal 1em calibri, helvetica, sans-serif;
+	border-radius: 15px;
+	background-color: #222;
+	box-shadow: 2.5px 2.5px 2.5px rgba(25, 50, 75, 0.5);
+	color: #fff;
+
+}
+/* Boton de ir arriba */
+
+.ir-arriba {
+	display: inline-block;
+	padding:20px;
+	background:#180821;
+	font-size:20px;
+	color:#fff;
+	cursor:pointer; /* Cambia el cursor cuando pasamos por delente */ 
+	position: fixed; /* Mantien el boton fijo en la pantalla */ 
+	bottom:20px;
+	right:20px;
+}
+.fondo {
+	display: inline-block;
+	padding:20px;
+	background:#180821;
+	font-size:26px;
+	color:#fff;
+	cursor:pointer; /* Cambia el cursor cuando pasamos por delente */ 
+	position: fixed; /* Mantien el boton fijo en la pantalla */ 
+	bottom:90px;
+	right:20px;
+}
+ 
+.contenedor {
+	width: 90%;
+	max-width:900px;
+	margin:auto;
+}
+.contenedor ::-webkit-scrollbar {
+	width: 7px;
+}
+
+.contenedor ::-webkit-scrollbar-thumb {
+	background: #581E78;
+	border-radius: 5px;
+}
+ 
+article {
+	background:rgba(24,8,33,.9);
+	padding:20px;
+	margin:20px 0;
+	color:#fff;
+	box-shadow:0 5px 5px 3px rgba(0, 0, 0, 0.25);
+}
+ 
+article h2 {
+	color:#fff;
+}
+ 
+article hr {
+	background:#F64740;
+	height:5px;
+	border:none;
+}
+ 
+article p {
+	line-height: 25px;
+}
+ 
+article h2, article p, article hr {
+	margin-bottom: 20px;
+}
+.calculadora {
+	display: inline-block;
+	background-color: #ffffff;
+	margin: 0;
+	padding: 10px;
+	text-align: center;
+	overflow: hidden;
+  border: 1px solid #dddddd;
+}
+
+.calculadora #display {
+	background-color: #ffffff;
+  margin-top: 4px;
+	margin-bottom: 4px;
+	padding: 0 10px;
+	width: 194px;
+	height: 40px;
+	font-family: 'Orbitron', monospace;
+	font-size: 14px;
+	text-align: right;
+	border: 1px solid #b9b9b9;	
+}
+
+.calculadora .num, .calculadora .fnc {
+	width: 40px;
+	height: 40px;
+	font-family: 'Orbitron', monospace;
+	font-size: 14px;
+	text-align: center;
+	padding: 0;
+	margin: 2px;
+	outline: none;
+	border: 1px solid;
+}
+
+.calculadora .egual {
+  background-color: #4c8efa !important;
+	border-color: #3079ed !important;
+	color: #ffffff !important;
+	height: 84px;
+}
+
+.calculadora .num {
+	background-color: #f5f5f5;
+	border-color: #c6c6c6;
+	color: #2222222;
+}
+
+.calculadora .fnc {
+	background-color: #d2d2d2;
+	border-color: #c6c6c6;
+	color: #222222;
+}
+
+#galeria{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#contGaleria{
+	width: 300px;
+	margin: auto;
+}
+
+#imagen{
+	width: 100%;
+	transition: transform .5s;
+}
+#imagen:hover{
+	transform: scale(1.5);
+}
+
+
+
+
