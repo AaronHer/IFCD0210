@@ -10,13 +10,14 @@
  
 body {
 	background:url(./imagenes/D3A.jpg); /* Nuestra imagen de fondo */
-	background-repeat:repeat; /* Indicamos que no se repetira */
+	background-repeat:repeat; /* Indicamos que se repetira */
 	background-size:cover; /* Encajamos la imagen al 100% del ancho */
 	background-attachment: fixed; /* Establecemos una posicion fija para la imagen */
  
 	font-family:helvetica, arial, sans-serif;
 	line-height:20px;
 }
+
 
 header {
 	/*background:#30336D;*/
@@ -128,6 +129,16 @@ li.lista-acc {
 	background: #581E78;
 	border-radius: 5px;
 }
+
+#accesible{
+	background:rgba(24,8,33,.9);
+	padding:10px;
+	margin:10px;
+	width: 15%;
+	text-align: center;
+	position: fixed;
+
+}
  
 article {
 	background:rgba(24,8,33,.9);
@@ -161,7 +172,7 @@ article h2, article p, article hr {
 	padding: 10px;
 	text-align: center;
 	overflow: hidden;
-  border: 1px solid #dddddd;
+  	border: 1px solid #dddddd;
 }
 
 .calculadora #display {
