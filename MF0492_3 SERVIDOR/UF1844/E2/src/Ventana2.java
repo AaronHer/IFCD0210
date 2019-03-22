@@ -26,12 +26,13 @@ import java.awt.Label;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.BevelBorder;
 import javax.swing.ImageIcon;
+import java.awt.Canvas;
 
 
 public class Ventana2 extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txt_nombre;
+	private JTextField txtnombre;
 	private JTextField textSalario;
 	private ButtonGroup botones = new ButtonGroup();
 	//el buttonGroup se importa y permite que no se puedan seleccionar varios botones, de manera que una vez declarado 
@@ -70,11 +71,11 @@ public class Ventana2 extends JFrame {
 		lblNewLabel.setBounds(213, 52, 71, 14);
 		contentPane.add(lblNewLabel);
 		
-		txt_nombre = new JTextField();
-		txt_nombre.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-		txt_nombre.setBounds(320, 49, 216, 20);
-		contentPane.add(txt_nombre);
-		txt_nombre.setColumns(10);
+		txtnombre = new JTextField();
+		txtnombre.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		txtnombre.setBounds(320, 49, 216, 20);
+		contentPane.add(txtnombre);
+		txtnombre.setColumns(10);
 		
 		JLabel lblEdad = new JLabel("Edad:");
 		lblEdad.setFont(new Font("Times New Roman", Font.PLAIN, 14));
@@ -136,7 +137,7 @@ public class Ventana2 extends JFrame {
 						sexo="";
 					}
 				}
-				mensaje =  txt_nombre.getText()+" tiene un rango de edad"+combo_Edad.getSelectedItem()+" de sexo"+sexo+" y tiene un salario de" + lblSalario.getText() ;
+				mensaje =  txtnombre.getText()+" tiene un rango de edad "+combo_Edad.getSelectedItem()+" de sexo "+sexo+" y tiene un salario de " + textSalario.getText() ;
 				System.out.println(mensaje);
 			}
 		});
@@ -168,23 +169,26 @@ public class Ventana2 extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
+		
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(Ventana2.class.getResource("/imagenes/purple-ombre-wallpaper_604564.jpg")));
 		label.setBounds(0, 0, 186, 379);
 		panel.add(label);
+		label.setIcon(new ImageIcon(Ventana2.class.getResource("/imagenes/purple-ombre-wallpaper_604564.jpg")));
 		
-		Button button_2 = new Button("Limpiar");
-		button_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Limpiar cl =new Limpiar ();
-				cl.limpiar(jPanel1);
-			}
+		
+		
+		Button boton_limpiar = new Button("Limpiar");
+		boton_limpiar.addActionListener(arg0 -> { 
+			
+			txtnombre.setText("");
+			textSalario.setText("");
+			
 		});
-		button_2.setForeground(Color.WHITE);
-		button_2.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-		button_2.setBackground(new Color(241, 57, 83));
-		button_2.setBounds(464, 320, 102, 34);
-		contentPane.add(button_2);
+		boton_limpiar.setForeground(Color.WHITE);
+		boton_limpiar.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		boton_limpiar.setBackground(new Color(241, 57, 83));
+		boton_limpiar.setBounds(464, 320, 102, 34);
+		contentPane.add(boton_limpiar);
 		
 		
 	}

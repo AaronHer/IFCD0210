@@ -6,6 +6,7 @@ public class DatosUsuarios {
 	String usuario1="";
 	String pass1="";
 	
+	@SuppressWarnings("deprecation")
 	public int probarPass() {
 		usuario1=E2.txt_usuario.getText();
 		pass1 = E2.passwordField.getText();
