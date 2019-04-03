@@ -1,0 +1,72 @@
+<<<<< FICHERO HTML >>>>>>>>
+
+
+<head>
+	<title>Ejercicio accesibilidad y usabilidad</title>
+	<meta charset="utf-8" />
+	<meta name="description" content="Ejercicio de HTML5 con accesibilidad y usabilidad" />
+	<link rel="icon" href="images/tt_favicon.ico" />
+	<link rel="stylesheet" href="css/html-acc-usa.css" />
+	<!-- Para usar en modo local 
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/jquery.min.js"></script>	 -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/html-acc-usa.js"></script>
+
+_______________________________________
+
+<aside id="accesibilidad">
+		<h2>Accesibilidad</h2>
+		<p>Puedes <strong>elegir</strong> entre las diferentes opciones, haciendo clic. Si quieres <strong>deshacer los cambios</strong>, pulsa la tecla <em>F5</em>.</p>
+		<ul>
+			<li id="tema-claro" class="lista-acc" title="Aplica una combinación de colores claros, con la letra en un tono oscuro,&#10;al hacer clic sobre este botón.">Tema claro</li>
+			<li id="tema-oscuro" class="lista-acc" title="Aplica una combinación de colores oscuros, con la letra en un tono claro,&#10;al hacer clic sobre este botón.">Tema oscuro</li>
+			<li id="agrandar-letra" class="lista-acc" title="Aumenta el tamaño de la letra al hacer clic sobre este botón.">AaBbCc++</li>
+			<li id="disminuir-letra" class="lista-acc" title="Disminuye el tamaño de la letra, al predeterminado,&#10;al hacer clic sobre este botón.">AaBbCc--</li>
+		</ul>
+
+
+________________________________________
+
+
+
+
+
+
+<<<<< FICHERO CSS >>>>>>>>
+
+/* Estilos para elementos li con clase 'lista-acc' */
+li.lista-acc {
+	display: inline-block;
+	margin: 5px 25px;
+	padding: 7.5px 15px;
+	font: normal 1em calibri, helvetica, sans-serif;
+	border-radius: 15px;
+	background-color: #222;
+	box-shadow: 2.5px 2.5px 2.5px rgba(25, 50, 75, 0.5);
+	color: #fff;
+
+________________________________________________________
+<<<<< FICHERO JAVASCRIPT >>>>>>>>
+
+
+// Código para las funcionalidades del menú de accesibilidad
+$(document).ready(function() {
+	$("#tema-claro").click(function() {
+		$("*").css('backgroundColor', '#eee');
+		$("*").css('color', '#000');
+	});
+	$("#tema-oscuro").click(function() {
+		$("*").css('backgroundColor', '#111');
+		$("*").css('color', '#ff0');
+	});
+	$("#agrandar-letra").click(function() {
+		$("body").css('fontSize', '1.8em');
+		$("#top").css('margin-top', '95em');
+	});
+	$("#disminuir-letra").click(function() {
+		$("body").css('fontSize', '1.1em');
+		$("#top").css('margin-top', '125em');
+	});
+});
