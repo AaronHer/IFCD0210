@@ -26,20 +26,36 @@ public class NewServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
+    
+    
+    
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String nom = request.getParameter("usuario");
+            String nom = request.getParameter("nombre");
+            String ape = request.getParameter("apellido");
+            String edad = request.getParameter("edad");
             String correo = request.getParameter("correo");
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet NewServlet</title>");            
+            out.println("<title>Datos introducidos</title>");
+            out.println("<link rel='stylesheet' type='text/css' href='E6.css' />");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>El nombre ingresado es: " + nom + "</h1>");
-            out.println("<h1>El correo ingresado es: " + correo + "</h1>");
+            out.println("<br>");
+            out.println("<br>");
+            out.println("<br>");
+            out.println("<h1>Los valores introducidos son: </h1>");
+            out.println("<br>");
+            out.println("<br>");
+            out.println("<br>");
+            out.println("<h2>El nombre ingresado es: " + nom + " " + ape + "</h1>");
+            out.println("<h2>Tine una edad de : " + edad + " años</h1>");
+            out.println("<h2>El correo ingresado es: " + correo + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -83,5 +99,7 @@ public class NewServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
+    
+    
+    
 }
