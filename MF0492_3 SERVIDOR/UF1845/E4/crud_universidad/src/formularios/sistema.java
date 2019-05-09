@@ -8,7 +8,10 @@ package formularios;
 import conexion_sql.conexion_sql;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 
 public class sistema extends javax.swing.JFrame {
@@ -25,7 +28,8 @@ public class sistema extends javax.swing.JFrame {
         
         this.setLocationRelativeTo(null);
         this.getContentPane().setBackground(getBackground());
-    }
+        mostrarDatos();
+    }   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -122,6 +126,11 @@ public class sistema extends javax.swing.JFrame {
         });
 
         botonEliminar.setText("Eliminar");
+        botonEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEliminarActionPerformed(evt);
+            }
+        });
 
         icono.setIcon(new javax.swing.ImageIcon("C:\\Users\\aula1\\Desktop\\E4\\ulpgc.PNG")); // NOI18N
 
@@ -195,18 +204,34 @@ public class sistema extends javax.swing.JFrame {
 
         tablaAlumnos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
+        tablaAlumnos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaAlumnosMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tablaAlumnos);
 
         busqueda.setText("Busqueda:");
+
+        txtBusqueda.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtBusquedaMouseClicked(evt);
+            }
+        });
+        txtBusqueda.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtBusquedaKeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -220,20 +245,20 @@ public class sistema extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(busqueda)
                         .addGap(18, 18, 18)
-                        .addComponent(txtBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 151, Short.MAX_VALUE))
+                        .addComponent(txtBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 15, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(busqueda)
                     .addComponent(txtBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -248,11 +273,15 @@ public class sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_comboMateriaActionPerformed
 
     private void botonNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonNuevoActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_botonNuevoActionPerformed
 
     private void botonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActualizarActionPerformed
-        // TODO add your handling code here:
+        actualizarDatos();
+        limpiarElementos();
+        mostrarDatos();
+        
+        
     }//GEN-LAST:event_botonActualizarActionPerformed
 
     private void txtApellidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidosActionPerformed
@@ -261,11 +290,112 @@ public class sistema extends javax.swing.JFrame {
 
     private void botonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGuardarActionPerformed
         insertarDatos();
+        limpiarElementos();
+        mostrarDatos();
     }//GEN-LAST:event_botonGuardarActionPerformed
 
+    private void tablaAlumnosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaAlumnosMouseClicked
+        
+        int filaSeleccionada = tablaAlumnos.rowAtPoint(evt.getPoint());
+        
+        txtNombre.setText(tablaAlumnos.getValueAt(filaSeleccionada, 1).toString());
+        txtApellidos.setText(tablaAlumnos.getValueAt(filaSeleccionada, 2).toString());
+        comboMateria.setSelectedItem(tablaAlumnos.getValueAt(filaSeleccionada, 3));
+        txtCalificacion.setText(tablaAlumnos.getValueAt(filaSeleccionada, 4).toString());
+        
+    }//GEN-LAST:event_tablaAlumnosMouseClicked
+
+    private void botonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarActionPerformed
+        eliminarRegistro();
+        mostrarDatos();
+        limpiarElementos();
+    }//GEN-LAST:event_botonEliminarActionPerformed
+
+    private void txtBusquedaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBusquedaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBusquedaMouseClicked
+
+    private void txtBusquedaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaKeyReleased
+       buscarRegistro(txtBusqueda.getText());
+    }//GEN-LAST:event_txtBusquedaKeyReleased
+    
+    public void mostrarDatos(){
+        String [] titulos = { "ID ", "Nombre ", "Apellidos", "Materia ", "Calificacion "};
+        String [] registros = new String [7];
+        
+        DefaultTableModel modelo = new DefaultTableModel (null , titulos);
+        
+        // sirve para consultar la base de datos de alumnos
+        String SQL = "select * from alumnos";
+        
+        try{
+            
+            Statement st = con.createStatement ();
+            ResultSet rs=st.executeQuery(SQL);
+            
+            while (rs.next()){
+                
+                registros [0] = rs.getString("idalumnos");
+                registros [1] = rs.getString("nombre");
+                registros [2] = rs.getString("apellidos");
+                registros [3] = rs.getString("materia");
+                registros [4] = rs.getString("calificacion");
+                
+                modelo.addRow(registros);
+                
+            }
+            
+            tablaAlumnos.setModel(modelo);
+        }catch (Exception e){
+            
+            JOptionPane.showMessageDialog(null, "Error al mostar los datos" + e.getMessage());
+            
+        }
+        
+    }
+    
+        public void actualizarDatos(){
+            
+        try{
+            String SQL = " update alumnos set nombre =?, apellidos=? , materia=? , calificacion=?  where idalumnos = ?";
+            
+            int filaSeleccionada = tablaAlumnos.getSelectedRow();
+            String dao = (String)tablaAlumnos.getValueAt(filaSeleccionada, 0);
+            PreparedStatement pst = con.prepareStatement (SQL);
+            
+            // Hacemos referencia a la columna numero 1 y el campo que queremos introducir. 
+            pst.setString(1, txtNombre.getText());
+            
+            pst.setString(2, txtApellidos.getText());
+            
+            // Para tratar el como box, declaramos primero la variable entera
+            
+            int seleccionado = comboMateria.getSelectedIndex();
+            pst.setString(3, comboMateria.getItemAt(seleccionado));
+           
+            pst.setDouble(4, Double.parseDouble(txtCalificacion.getText()));
+            
+            // Ejecutamos la consulta
+            
+            
+            pst.setString(5, dao);
+            pst.execute();
+            
+            JOptionPane.showMessageDialog(null,"Registro actualizado");
+            
+            
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null,"Error al actualizar " + e.getMessage());
+            
+        }
+    }
+        
+    
+    
+    
     public void insertarDatos (){
         try{
-            String SQL = "insert into alumnos (idalumno, nombre, apellidos, materia, calificacion)values ( ?, ?, ?, ?)";
+            String SQL = "insert into alumnos (nombre, apellidos, materia, calificacion)values ( ?, ?, ?, ?)";
             PreparedStatement pst = con.prepareStatement (SQL);
             
             // Hacemos referencia a la columna numero 1 y el campo que queremos introducir. 
@@ -290,6 +420,76 @@ public class sistema extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Error en el registro " + e.getMessage());
             
         }
+    }
+    
+    public void eliminarRegistro(){
+        
+        int filaSeleccioanda = tablaAlumnos.getSelectedRow();
+        
+        try{
+            String SQL = "delete from alumnos where idalumnos = " + tablaAlumnos.getValueAt(filaSeleccioanda, 0);
+            
+            Statement st= con.createStatement();
+            
+            int n = st.executeUpdate(SQL);
+            
+            if (n>=0){
+                JOptionPane.showConfirmDialog( null, "Registro Eliminado");
+            }
+            
+        }catch (Exception e){
+            JOptionPane.showConfirmDialog( null, "Error al elimianrlo" + e.getMessage());
+        }
+        
+    }
+    
+    public void buscarRegistro(String valor){
+        
+            String [] titulos = { "ID ", "Nombre ", "Apellidos", "Materia ", "Calificacion "};
+        String [] registros = new String [7];
+        
+        DefaultTableModel modelo = new DefaultTableModel (null , titulos);
+        
+        // sirve para consultar la base de datos de alumnos
+        String SQL = "select * from alumnos where nombre like '%" + valor + "%'";
+        
+        try{
+            
+            Statement st = con.createStatement ();
+            ResultSet rs=st.executeQuery(SQL);
+            
+            while (rs.next()){
+                
+                registros [0] = rs.getString("idalumnos");
+                registros [1] = rs.getString("nombre");
+                registros [2] = rs.getString("apellidos");
+                registros [3] = rs.getString("materia");
+                registros [4] = rs.getString("calificacion");
+                
+                modelo.addRow(registros);
+                
+            }
+            
+            tablaAlumnos.setModel(modelo);
+        }catch (Exception e){
+            
+            JOptionPane.showMessageDialog(null, "Error al mostar los datos" + e.getMessage());
+            
+        }
+        
+    
+    }
+    
+    public void limpiarElementos(){
+        
+        txtNombre.setText("");
+        txtApellidos.setText("");
+        txtCalificacion.setText("");
+        comboMateria.setSelectedItem(null);
+    }
+    
+    public void eliminarAlumno(){
+        
     }
     /**
      * @param args the command line arguments

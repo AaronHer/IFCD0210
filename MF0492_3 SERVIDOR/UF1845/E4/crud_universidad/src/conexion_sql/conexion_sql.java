@@ -23,7 +23,7 @@ public class conexion_sql {
             
             JOptionPane.showMessageDialog(null, "Conexión exitosa");
         }catch (Exception e){
-            JOptionPane.showMessageDialog(null, "No se puede conectar" + e.getMessage());
+            JOptionPane.showMessageDialog(null, "No se puede conectar " + e.getMessage());
             
         }
         return conectar;
