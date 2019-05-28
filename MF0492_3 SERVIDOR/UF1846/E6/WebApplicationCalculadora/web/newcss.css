@@ -11,11 +11,16 @@ and open the template in the editor.
 body {
 	background: #005FD4;
         padding: 30px;
+        color:white;
 }
 
 h1, p{
 	text-shadow:5px 5px 5px #000000;
         color:white;
+}
+
+table,td{
+    color:white;
 }
 
 
